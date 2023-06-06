@@ -9,8 +9,7 @@ using std::cout;
 using std::endl;
 using std::getline;
 using std::string;
-using std::ifstream;
-using std::ofstream;
+
 
 class NewSed {
 	private:

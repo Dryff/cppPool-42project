@@ -1,4 +1,4 @@
-NAME		= NewSed
+NAME		= Harlfilter
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,15 +6,16 @@ RM			= rm -rf
 
 OBJDIR =	 .objFiles
 
-FILES		= main newSed
+FILES		= main Harl
 
-HEADER		= newSed.hpp
+HEADER		= Harl.hpp
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 
 #Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
+GREEN		=	\e[92;1;118m
+YELLOW		=	\e[93;1;226m
+RED			=	\e[33;1;31m
 GRAY		=	\e[33;2;37m
 RESET		=	\e[0m
 CURSIVE		=	\e[33;3m
@@ -22,7 +23,7 @@ CURSIVE		=	\e[33;3m
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER)
-	@$(CC) $(OBJ)  -o $(NAME)
+	@$(CC) $(OBJ) $(FLAGS) -o $(NAME)
 	@printf "$(_SUCCESS) $(GREEN)- Executable ready.\n$(RESET)"
 
 $(OBJDIR)/%.o: %.cpp $(HEADER)
@@ -35,7 +36,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
+	@printf "$(RED)    - Executable removed.$(RESET)\n"
 
 re: fclean all
 

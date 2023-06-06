@@ -8,13 +8,22 @@ Contact::~Contact(){
 }
 
 
-string Contact::getInfo(string str) const {
+string Contact::getText(string str) const {
     string input = "";
 
     do {
 			cout << str;
      		getline(cin, input);
 		} while (input.length() == 0 && !cin.eof());
+        return (input);
+}
+
+string Contact::getNumber(string str) const {
+    string input = "";
+    do {
+			cout << str;
+     		getline(cin, input);
+		} while ((input.length() == 0 && !cin.eof()) || !is_only_digits(input));
         return (input);
 }
 
@@ -36,20 +45,20 @@ void    Contact::initContactIndex() {
     this->index = -1;
 }
 
-void    Contact::getContact(void){
-    this->_firstName = getInfo("First name: ");
+void    Contact::setContact(void){
+    this->_firstName = getText("First name: ");
     if (cin.eof())
         return;
-    this->_lastName = getInfo("Last name: ");
+    this->_lastName = getText("Last name: ");
     if (cin.eof())
         return;
-    this->_nickName = getInfo("Nickname: ");
+    this->_nickName = getText("Nickname: ");
     if (cin.eof())
         return;
-    this->_phoneNumber = getInfo("Phone number: ");
+    this->_phoneNumber = getNumber("Phone number: ");
     if (cin.eof())
         return;
-    this->_darkestSecret = getInfo("Darkest secret: ");
+    this->_darkestSecret = getText("Darkest secret: ");
 }
 
 void    Contact::displayLine(int index) {

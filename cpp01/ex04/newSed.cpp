@@ -8,7 +8,7 @@ NewSed::~NewSed() {
 }
 
 void NewSed::replace(string toFind, string replace) {
-	ifstream instr(this->_infile);
+	std::ifstream instr(this->_infile);
 	string buffer;
 
 	if (!instr.is_open()) {
@@ -21,7 +21,7 @@ void NewSed::replace(string toFind, string replace) {
 		return;
 	}
 	size_t pos;
-	ofstream outstr(this->_outfile);
+	std::ofstream outstr(this->_outfile);
 	while ((pos = buffer.find(toFind)) != string::npos)
 	{
 		buffer.erase(pos, toFind.length());

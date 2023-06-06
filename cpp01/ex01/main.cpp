@@ -23,7 +23,7 @@ int main() {
         cout << "Enter the number of zombies you want in the Horde : ";
         cin >> str;
     } while (!is_only_digits(str));
-    N = stoi(str);
+    std::istringstream(str) >> N;
     zHorde = zombieHorde(N, "zombi");
     for (int i = 0; i < N; i++)
     {

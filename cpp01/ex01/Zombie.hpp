@@ -2,6 +2,7 @@
 #define ZOMBIE_HPP
 
 #include <iostream>
+#include <sstream>
 
 using std::cin;
 using std::cout;

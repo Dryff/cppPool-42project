@@ -1,9 +1,10 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#define MAX_CONTACT 8
+#define MAX_CONTACT 2
 
 #include <iostream>
+#include <sstream>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -23,6 +24,5 @@ class PhoneBook
 		void 	initContact();
 };
 
-bool	is_only_digits(const std::string &str);
 
 #endif

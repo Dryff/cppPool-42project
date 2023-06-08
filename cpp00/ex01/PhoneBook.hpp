@@ -1,7 +1,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#define MAX_CONTACT 2
+#define MAX_CONTACT 8
 
 #include <iostream>
 #include <sstream>

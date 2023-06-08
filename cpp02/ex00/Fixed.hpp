@@ -22,12 +22,10 @@ class Fixed
 		~Fixed();
 
 		Fixed &		operator=(Fixed const & rhs);
-		int 		getRawBits(void) const;
+		int 		getRawBits() const;
 		void 		setRawBits(int const raw);
 
 
 };
-
-std::ostream &			operator<<( std::ostream & o, Fixed const & i );
 
 #endif

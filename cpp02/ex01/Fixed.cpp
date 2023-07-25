@@ -7,17 +7,17 @@ Fixed::Fixed() :_value(0){
 	cout << "Default constructor called" << endl;
 }
 
-Fixed::Fixed(const int n) : _value( n << _bits ) {
+Fixed::Fixed(const int n) : _value(n << _bits) {
     cout << "Int constructor called" << endl;
 }
 
-Fixed::Fixed(const float n) : _value(roundf( n * ( 1 << _bits ))) {
+Fixed::Fixed(const float n) : _value(roundf(n * (1 << _bits))) {
     cout << "Float constructor called" << endl;
 }
 
 Fixed::Fixed(const Fixed &src) {
-	cout << "Copy constructor called" << endl;
 	*this = src;
+	cout << "Copy constructor called" << endl;
 }
 
 /*

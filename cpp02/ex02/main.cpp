@@ -9,6 +9,7 @@ int main( void ) {
     cout << a << endl;
     cout << a++ << endl;
     cout << a << endl;
+
     cout << b << endl;
     cout << Fixed::max( a, b ) << endl;
 

@@ -33,32 +33,28 @@ class Fixed
 		bool		operator==(Fixed const & rhs);
 		bool		operator!=(Fixed const & rhs);
 
-		
 		Fixed &		operator++();
-		Fixed &		operator++(int);
+		Fixed 		operator++(int);
 		Fixed &		operator--();
-		Fixed &		operator--(int);
+		Fixed 		operator--(int);
 
-		
-
-		Fixed	operator*(Fixed const & rhs);
-		Fixed	operator/(Fixed const & rhs);
-		Fixed	operator+(Fixed const & rhs);
-		Fixed	operator-(Fixed const & rhs);
-
-
-		int 		getRawBits() const;
-		void 		setRawBits(int const raw);
-		float		toFloat() const;
-		int			toInt() const;
+		Fixed	operator*(const Fixed & rhs);
+		Fixed	operator/(const Fixed & rhs);
+		Fixed	operator+(const Fixed & rhs);
+		Fixed	operator-(const Fixed & rhs);
 
 		static Fixed & min(Fixed & a, Fixed & b);
 		static const Fixed & min(const Fixed & a, const Fixed & b);
 		static Fixed & max(Fixed & a, Fixed & b);
 		static const Fixed & max(const Fixed & a, const Fixed & b);
+
+		int 		getRawBits() const;
+		void 		setRawBits(int const raw);
+		float		toFloat() const;
+		int			toInt() const;
 };
 
-std::ostream &			operator<<( std::ostream & o, Fixed const & i );
+std::ostream &			operator<<(std::ostream & o, Fixed const & i);
 
 
 #endif

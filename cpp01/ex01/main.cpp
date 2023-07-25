@@ -24,7 +24,7 @@ int main() {
         cin >> str;
     } while (!is_only_digits(str));
     std::istringstream(str) >> N;
-    zHorde = zombieHorde(N, "zombi");
+    zHorde = zombieHorde(N, "jeff");
     for (int i = 0; i < N; i++)
     {
         cout << "Zombie " << i + 1 << " : ";

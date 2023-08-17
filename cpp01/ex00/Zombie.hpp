@@ -23,4 +23,7 @@ public:
 	void initName(string name);
 };
 
+Zombie *newZombie(string name);
+void	randomChump(string name);
+
 #endif

@@ -49,19 +49,20 @@ void ClapTrap::attack(const string &target) {
 	cout << this->_name << " attacked " << target << " causing " << this->_attackDamage << " points of damage." << endl;
 }
 
-void ClapTrap::beRepaired(unsigned int amount) {
-	if (_hitPoints <= 0)
+void ClapTrap::beRepaired(int amount) {
+	if (_hitPoints <= 0){
+		cout << this->_name << " is already dead." << endl;
 		return;
+	}
 	this->_energyPoints -= 1;
 	cout << this->_name << " repairs himself " << amount << " Hitpoints." << endl;
 }
 
-void ClapTrap::takeDamage(unsigned int amount) {
+void ClapTrap::takeDamage(int amount) {
 	if (_hitPoints <= 0) {
 		cout << this->_name << " is already dead." << endl;
 		return;
 	}
-	cout << "hp : "<< _hitPoints;
 	if (_hitPoints >= amount)
 		cout << "[ClapTrap] " << this->_name << " was attacked and lost " << amount << " Hitpoints." << endl;
 	else {

@@ -38,5 +38,11 @@ void Cat::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+Cat&   Cat::operator=( const Cat& rhs ) {
+	cout << ">Cat< " << rhs.type << " has been copied on "<< this->type << " with copy assignment operator." << std::endl;
+	this->type = rhs.type;
+
+	return *this;
+}
 
 /* ************************************************************************** */

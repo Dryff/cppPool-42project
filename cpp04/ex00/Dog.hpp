@@ -8,19 +8,16 @@
 
 class Dog : public Animal
 {
+	private:
 
 	public:
 
 		Dog();
 		Dog(Dog const & src);
 		~Dog();
-
+	
 		void makeSound() const;
-
-	private:
-
+		Dog &		operator=(Dog const & rhs);
 };
-
-std::ostream &			operator<<(std::ostream & o, Dog const & i);
 
 #endif /* ************************************************************* DOG_H */

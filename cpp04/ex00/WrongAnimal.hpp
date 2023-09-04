@@ -19,12 +19,12 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal(string str);
 		WrongAnimal(WrongAnimal const & src);
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 
 		string getType() const;
-		virtual void makeSound() const;
-};
+		void makeSound() const;
 
-std::ostream &			operator<<(std::ostream & o, WrongAnimal const & i);
+		WrongAnimal &		operator=(WrongAnimal const & rhs);
+};
 
 #endif /* ************************************************************* WrongAnimal_H */

@@ -1,6 +1,8 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(){
+
+
+PhoneBook::PhoneBook() : _contactList(){
 }
 
 PhoneBook::~PhoneBook(){

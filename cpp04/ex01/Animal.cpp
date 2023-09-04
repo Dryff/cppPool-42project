@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : type("Random Animal")
+Animal::Animal() : type("Animal")
 {
 	cout << type << " constructor called !" << endl;
 }
@@ -14,7 +14,7 @@ Animal::Animal(string str) : type(str)
 	cout << "Animal constructor called !" << endl;
 }
 
-Animal::Animal( const Animal & src )
+Animal::Animal(const Animal & src)
 {
 	cout << type << " copy constructor called" << endl;
 	*this = src;
@@ -46,6 +46,13 @@ string    Animal::getType() const
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+Animal&   Animal::operator=( const Animal& rhs ) {
+	cout << ">Animal< " << rhs.type << " has been copied on "<< this->type << " with copy assignment operator." << std::endl;
+	this->type = rhs.type;
+
+	return *this;
+}
 
 
 /* ************************************************************************** */

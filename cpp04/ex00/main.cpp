@@ -12,21 +12,24 @@ int main()
 	cout << "-----Tests-----" << endl;
 	std::cout << "Type : " << j->getType() << " " << std::endl;
 	std::cout << "Type : " << i->getType() << " " << std::endl;
-	cout <<  "Sound of Cat : ";
-	i->makeSound(); //will output the cat sound!
 	cout << "Sound of Dog : ";
 	j->makeSound();
-	cout << "Sound of RandomAnimal : ";
+	cout <<  "Sound of Cat : ";
+	i->makeSound();
+	cout << "Sound of Animal : ";
 	meta->makeSound();
-
+	cout << endl;
+	
 	cout << "-----Constructors-----" << endl;
 	const WrongAnimal* wrongMeta = new WrongAnimal();
 	const WrongAnimal* k = new WrongCat();
+	const WrongCat* l = new WrongCat();
 	
 	cout << "-----Tests-----" << endl;
 	std::cout << "Type : " << k->getType() << " " << std::endl;
-	k->makeSound(); //will output the Wrongcat sound!
+	k->makeSound();
 	wrongMeta->makeSound();
+	l->makeSound();
 
 	cout << "-----Destructors-----" << endl;
 

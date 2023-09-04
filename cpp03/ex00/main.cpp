@@ -1,12 +1,12 @@
 #include "ClapTrap.hpp"
 
 int main() {
-	ClapTrap Jinx("Jinx");
-	ClapTrap Yasuo("Yasuo");
+	ClapTrap clap1("clap1");
+	ClapTrap clap2("clap2");
 
-	Jinx.attack("Yasuo");
-	Yasuo.beRepaired(10);
-	Yasuo.takeDamage(25);
-	Yasuo.beRepaired(10);
-	Yasuo.takeDamage(25);
+	clap1.attack("clap2");
+	clap2.beRepaired(10);
+	clap2.takeDamage(25);
+	clap2.beRepaired(10);
+	clap2.takeDamage(25);
 }

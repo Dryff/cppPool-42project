@@ -30,13 +30,24 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound() const
 {
-	cout << "*Sound of WrongCat*" << endl;
+	cout << "WrongCat makeSound called" << endl;
 }
 
+/*
+** --------------------------------- OVERLOAD ---------------------------------
+*/
+
+WrongCat&   WrongCat::operator=( const WrongCat& rhs ) {
+	cout << ">WrongCat< " << rhs.type << " has been copied on "<< this->type << " with copy assignment operator." << std::endl;
+	this->type = rhs.type;
+
+	return *this;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
 
 
 /* ************************************************************************** */

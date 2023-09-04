@@ -4,22 +4,26 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-DiamondTrap::DiamondTrap(string name) : ClapTrap(name), FlagTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap()
+{
+    std::cout << ">DiamondTrap< " << this->_name << " constructed." << std::endl;
+}
+
+DiamondTrap::DiamondTrap(string name) : ClapTrap(name), FragTrap(name), ScavTrap(name)
 {
     this->_name = name;
     this->ClapTrap::_name = name + "_clap_name";
     
-    FlagTrap::_hitPoints = 100;
-    ScavTrap::_energyPoints = 50;
-    FlagTrap::_attackDamage = 30;
+    this->_hitPoints = FragTrap::_hitPoints;
+    this->_energyPoints = ScavTrap::_energyPoints;
+    this->_attackDamage = FragTrap::_attackDamage;
     
     std::cout << ">DiamondTrap< " << this->_name << " constructed." << std::endl;
 }
 
-
-
-void    DiamondTrap::whoAmI( void ) {
-    std::cout << ">DiamondTrap< I am " << this->_name << ", my ClapTrap name is " << ClapTrap::_name << std::endl;
+DiamondTrap::DiamondTrap(const DiamondTrap & src) {
+    *this = src;
+    cout << ">DiamondTrap< Copy constructor called" << endl;
 }
 
 
@@ -35,14 +39,15 @@ DiamondTrap::~DiamondTrap() {
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// DiamondTrap &				DiamondTrap::operator=( DiamondTrap const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
+DiamondTrap&   DiamondTrap::operator=( const DiamondTrap& rhs ) {
+    cout << ">DiamondTrap< " << rhs._name << " has been copied on "<< this->_name << " with copy assignment operator." << std::endl;
+    this->_name = rhs._name;
+    this->_hitPoints = rhs._hitPoints;
+    this->_energyPoints = rhs._energyPoints;
+    this->_attackDamage = rhs._attackDamage;
+
+    return *this;
+}
 
 // std::ostream &			operator<<( std::ostream & o, DiamondTrap const & i )
 // {
@@ -55,6 +60,9 @@ DiamondTrap::~DiamondTrap() {
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void    DiamondTrap::whoAmI() {
+    std::cout << ">DiamondTrap< I am " << this->_name << ", my ClapTrap name is " << ClapTrap::_name << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

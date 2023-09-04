@@ -47,5 +47,12 @@ string    AAnimal::getType() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+AAnimal & AAnimal::operator=( const AAnimal &rhs )
+{
+	if (this == &rhs)
+		return (*this);
+	this->type = rhs.type;
+	return (*this);
+}
 
 /* ************************************************************************** */

@@ -14,20 +14,23 @@ class ClapTrap
 {
 	private:
 		string _name;
-		int _hitPoints;
-		int _energyPoints;
-		int _attackDamage;
+		unsigned int _hitPoints;
+		unsigned int _energyPoints;
+		unsigned int _attackDamage;
 
 	public:
 
+		ClapTrap();
 		ClapTrap(string name);
 		ClapTrap(ClapTrap const & src);
 		~ClapTrap();
 		void attack(const string& target);
-		void takeDamage(int amount);
-		void beRepaired(int amount);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 
-		// ClapTrap &		operator=(ClapTrap const & rhs);
+		string	getName() const;
+
+		ClapTrap &		operator=(ClapTrap const & rhs);
 };
 
 // std::ostream &			operator<<( std::ostream & o, ClapTrap const & i );

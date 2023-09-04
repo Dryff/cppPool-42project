@@ -6,9 +6,9 @@
 class ScavTrap : public ClapTrap
 {
 private:
-    ScavTrap();
 
 public:
+    ScavTrap();
     ScavTrap(string name);
 	ScavTrap(ScavTrap const & src);
     ~ScavTrap();
@@ -17,9 +17,6 @@ public:
     void    guardGate();
 
 	ScavTrap &		operator=(ScavTrap const & rhs);
-
 };
-
-
 
 #endif 

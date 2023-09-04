@@ -4,15 +4,18 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain() 
+Brain::Brain()
 {
-	cout << "Brain constructor called !" << endl;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = "id";
+	cout << "Brain constructor called and filled with ideas" << endl;
 }
 
 Brain::Brain(Brain const & src)
 {
-	cout << "Brain copy constructor called !" << endl;
-	*this = src;
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = src.ideas[i] + " copy";
+	cout << "Brain copy constructor called and copied the other's ideas" << endl;
 }
 
 /*
@@ -32,5 +35,16 @@ Brain::~Brain()
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+Brain & Brain::operator=(Brain const & rhs)
+{
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = rhs.ideas[i];
+	return (*this);
+}
+
+string *Brain::getIdeas()
+{
+	return (this->ideas);
+}
 
 /* ************************************************************************** */

@@ -12,8 +12,8 @@ Cat::Cat() : Animal("Cat")
 
 Cat::Cat(Cat const & src)
 {
-	cout << type << " deep copy constructor called !" << endl;
 	type = src.type;
+	cout << type << " deep copy constructor called !" << endl;
 	brain = new Brain(*src.brain);
 }
 
@@ -40,5 +40,12 @@ void Cat::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+Cat&   Cat::operator=( const Cat& rhs ) {
+	if (this == &rhs)
+		return (*this);
+	this->type = rhs.type;
+	this->brain = new Brain(*rhs.brain);
+	return (*this);
+}
 
 /* ************************************************************************** */

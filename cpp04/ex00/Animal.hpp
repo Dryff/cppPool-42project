@@ -23,6 +23,8 @@ class Animal
 
 		string getType() const;
 		virtual void makeSound() const;
+
+		Animal &		operator=(Animal const & rhs);
 };
 
 

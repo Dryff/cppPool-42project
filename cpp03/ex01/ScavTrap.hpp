@@ -6,9 +6,9 @@
 class ScavTrap : public ClapTrap
 {
 private:
-    ScavTrap();
 
 public:
+    ScavTrap();
     ScavTrap(string name);
 	ScavTrap(ScavTrap const & src);
     ~ScavTrap();

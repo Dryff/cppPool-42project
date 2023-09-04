@@ -21,18 +21,27 @@ Dog::Dog(Dog const & src)
 
 Dog::~Dog()
 {
-	cout << "Dog destructor called" << endl;
+	cout << type << " destructor called" << endl;
 }
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Dog::makeSound() const
-{
+void Dog::makeSound() const {
 	cout << "Wouf" << endl;
 }
 
+/*
+** --------------------------------- OVERLOAD ---------------------------------
+*/
+
+Dog&   Dog::operator=( const Dog& rhs ) {
+	cout << ">Dog< " << rhs.type << " has been copied on "<< this->type << " with copy assignment operator." << std::endl;
+	this->type = rhs.type;
+
+	return *this;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

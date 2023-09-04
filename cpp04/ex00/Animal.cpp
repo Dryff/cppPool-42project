@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : type("Random Animal")
+Animal::Animal() : type("Animal")
 {
 	cout << type << " constructor called !" << endl;
 }
@@ -35,12 +35,23 @@ Animal::~Animal()
 
 void Animal::makeSound() const
 {
-    cout << "Animal makeSound called" << endl;
+    cout << "*Animal sound*" << endl;
 }
 
 string    Animal::getType() const
 {
     return this->type;
+}
+
+/*
+** --------------------------------- OVERLOAD ---------------------------------
+*/
+
+Animal&   Animal::operator=( const Animal& rhs ) {
+	cout << ">Animal< " << rhs.type << " has been copied on "<< this->type << " with copy assignment operator." << std::endl;
+	this->type = rhs.type;
+
+	return *this;
 }
 
 /*

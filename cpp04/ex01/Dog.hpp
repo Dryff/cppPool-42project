@@ -16,13 +16,11 @@ class Dog : public Animal
 	public:
 		Dog();
 		Dog(Dog const & src);
-		~Dog();
+		virtual ~Dog();
 
 		void makeSound() const;
 
-
+		Dog &		operator=(Dog const & rhs);
 };
-
-std::ostream &			operator<<(std::ostream & o, Dog const & i);
 
 #endif /* ************************************************************* DOG_H */

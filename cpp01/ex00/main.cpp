@@ -1,14 +1,5 @@
 #include "Zombie.hpp"
 
-Zombie	*newZombie(string name) {
-    return (new Zombie(name));
-}
-
-void	randomChump(string name) {
-	Zombie zombie(name);
-	zombie.announce();
-}
-
 int main(){
 
 	string name;

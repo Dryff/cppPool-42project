@@ -8,7 +8,7 @@ Weapon::~Weapon() {
 
 }
 
-string& Weapon::getType() {
+const string& Weapon::getType() {
   	return this->type;
 }
 

@@ -24,8 +24,8 @@ class ClapTrap
 		ClapTrap(ClapTrap const & src);
 		~ClapTrap();
 		void attack(const string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void takeDamage(int amount);
+		void beRepaired(int amount);
 
 		// ClapTrap &		operator=(ClapTrap const & rhs);
 };

@@ -21,7 +21,7 @@ class PhoneBook
 		void 	PrintContact(void);
 		void 	PrintSummary(void);
 		void	PrintMenu();
-		void 	initContact();
+		void 	initContact();w
 };
 
 

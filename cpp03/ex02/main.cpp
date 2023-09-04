@@ -3,8 +3,8 @@
 
 int main() {
 	ClapTrap Jinx("Jinx");
-	ScavTrap Yone("Yone");
 	ClapTrap Yasuo("Yasuo");
+	ScavTrap Yone("Yone");
 	FlagTrap Heyo("Heyo");
 
 	Jinx.attack("Yasuo");

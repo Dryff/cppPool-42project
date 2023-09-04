@@ -5,6 +5,8 @@ int main() {
 	ClapTrap Yasuo("Yasuo");
 
 	Jinx.attack("Yasuo");
+	Yasuo.beRepaired(10);
 	Yasuo.takeDamage(25);
 	Yasuo.beRepaired(10);
+	Yasuo.takeDamage(25);
 }

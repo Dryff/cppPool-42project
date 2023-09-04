@@ -7,7 +7,7 @@ RM			= rm -rf
 
 OBJDIR = .objFiles
 
-FILES		= Zombie main
+FILES		= Zombie main newZombie randomChump
 
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))

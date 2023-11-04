@@ -69,6 +69,10 @@
         "__functional_03": "cpp",
         "memory_resource": "cpp",
         "filesystem": "cpp",
-        "__functional_base_03": "cpp"
+        "__functional_base_03": "cpp",
+        "__bits": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "variant": "cpp"
     }
 }

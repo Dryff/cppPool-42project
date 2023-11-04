@@ -11,14 +11,15 @@ private:
 	T*				_myArray;
 
 public:
-	Array(): _size(0), _myArray(new T()) {};
+	Array(): _size(0), _myArray(new T[_size]) {};
 
 	Array(unsigned int n): _size(n) {
 		this->_myArray = new T[n];
 	};
 
 	~Array() {
-		delete[] _myArray;
+		if (this->_size > 0)
+			delete[] _myArray;
 	}
 
 	Array(Array const & src): _size(src.size()) {
@@ -55,6 +56,8 @@ public:
 
 template <typename T>
 std::ostream & operator<<(std::ostream & out, const Array<T> & arr) {
+	if (arr.size() == 0)
+		return out << "Array is empty";
 	for (unsigned int i = 0; i < arr.size(); i++) {
 		out << arr[i] << " ";
 	}

@@ -63,4 +63,13 @@ int main() {
 		std::cout << "Getting the size of the array : ";
 		std::cout << intArr.size() << std::endl << std::endl;
 	}
+
+	std::cout << "Testing default constructor and trying to display an empty array : ";
+	try {
+		Array<std::string> array;
+		std::cout << array << std::endl;
+	}
+	catch (const std::exception &e) {
+			std::cerr << e.what() << std::endl;
+	}
 }

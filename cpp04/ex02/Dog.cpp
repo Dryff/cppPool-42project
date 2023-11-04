@@ -38,5 +38,11 @@ void Dog::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+Dog&   Dog::operator=( const Dog& rhs ) {
+	cout << ">Dog< " << rhs.type << " has been copied on "<< this->type << " with copy assignment operator." << std::endl;
+	this->type = rhs.type;
+
+	return *this;
+}
 
 /* ************************************************************************** */

@@ -1,14 +1,14 @@
 NAME		= DiamondTrap
 	
 CC			= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
+FLAGS		= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
 OBJDIR =	 .objFiles
 
-FILES		= main ClapTrap ScavTrap FlagTrap DiamondTrap
+FILES		= main ClapTrap ScavTrap FragTrap DiamondTrap
 
-HEADER		= ClapTrap.hpp ScavTrap.hpp FlagTrap.hpp DiamondTrap.hpp
+HEADER		= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 

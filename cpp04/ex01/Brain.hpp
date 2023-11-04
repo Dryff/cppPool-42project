@@ -17,8 +17,9 @@ class Brain
 		Brain(Brain *src);
 		~Brain();
 
-};
+		string *getIdeas();
+		Brain &		operator=(Brain const & rhs);
 
-std::ostream &			operator<<(std::ostream & o, Brain const & i);
+};
 
 #endif /* ************************************************************* Brain_H */

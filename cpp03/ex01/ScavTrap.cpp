@@ -4,12 +4,24 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
+ScavTrap::ScavTrap() : ClapTrap() {
+    this->_hitPoints = 100;
+    this->_energyPoints = 50;
+    this->_attackDamage = 20;
+    std::cout << "<ScavTrap> Default constructor called" << std::endl;
+}
+
 ScavTrap::ScavTrap(string name) : ClapTrap(name)
 {
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
     std::cout << "<ScavTrap> " << this->_name << " constructor called." << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap & src) {
+	*this = src;
+	cout << "<ScavTrap> Copy constructor called" << endl;
 }
 
 /*
@@ -26,11 +38,12 @@ ScavTrap::~ScavTrap() {
 
 
 ScavTrap&   ScavTrap::operator=( const ScavTrap& rhs ) {
+    cout << "<ScavTrap> " << rhs._name << " has been copied on "<< this->_name << " with copy assignment operator." << std::endl;
     this->_name = rhs._name;
     this->_hitPoints = rhs._hitPoints;
     this->_energyPoints = rhs._energyPoints;
     this->_attackDamage = rhs._attackDamage;
-    std::cout << "<ScavTrap> " << this->_name << " has been copied with copy assignment operator." << std::endl;
+
     return *this;
 }
 

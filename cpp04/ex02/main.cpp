@@ -3,6 +3,7 @@
 
 int main()
 {
+	//Animal test;
 	cout << "-----Constructors-----" << endl;
 	const AAnimal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
 	cout << "-----Tests-----" << endl;

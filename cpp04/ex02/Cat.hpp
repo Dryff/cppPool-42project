@@ -16,9 +16,7 @@ class Cat : public AAnimal
 		~Cat();
 
 		void makeSound() const;
-
+		Cat &		operator=(Cat const & rhs);
 };
-
-std::ostream &			operator<<(std::ostream & o, Cat const & i);
 
 #endif /* ************************************************************* CAT_H */

@@ -12,10 +12,11 @@ Dog::Dog() : Animal("Dog")
 
 Dog::Dog(Dog const & src)
 {
-	cout << type << "copy constructor called !" << endl;
 	type = src.type;
+	cout << type << " deep copy constructor called !" << endl;
 	brain = new Brain(*src.brain);
 }
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -40,5 +41,12 @@ void Dog::makeSound() const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+Dog&   Dog::operator=( const Dog& rhs ) {
+	if (this == &rhs)
+		return (*this);
+	this->type = rhs.type;
+	this->brain = new Brain(*rhs.brain);
+	return (*this);
+}
 
 /* ************************************************************************** */

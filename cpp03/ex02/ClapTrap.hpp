@@ -18,10 +18,10 @@ class ClapTrap
     unsigned int    _energyPoints;
     unsigned int    _attackDamage;
 
-    ClapTrap();
 
 	public:
 
+    	ClapTrap();
 		ClapTrap(string name);
 		ClapTrap(ClapTrap const & src);
 		~ClapTrap();

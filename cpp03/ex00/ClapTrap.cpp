@@ -4,8 +4,12 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ClapTrap::ClapTrap(string name) :_name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0){
+ClapTrap::ClapTrap() :_name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0){
 	cout << "Default constructor called" << endl;
+}
+
+ClapTrap::ClapTrap(string name) :_name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0){
+	cout << _name << " constructor called" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap & src) {
@@ -25,20 +29,15 @@ ClapTrap::~ClapTrap() {
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// ClapTrap &				ClapTrap::operator=(ClapTrap const & rhs)
-// {
-// 	// if ( this != &rhs )
-// 	// {
-// 	// 	this->_value = rhs.getValue();
-// 	// }
-// 	// return *this;
-// }
+ClapTrap&   ClapTrap::operator=( const ClapTrap& rhs ) {
+    cout << "[ClapTrap] " << rhs._name << " has been copied on "<< this->_name << " with copy assignment operator." << std::endl;
+    this->_name = rhs._name;
+    this->_hitPoints = rhs._hitPoints;
+    this->_energyPoints = rhs._energyPoints;
+    this->_attackDamage = rhs._attackDamage;
 
-// std::ostream &			operator<<(std::ostream & o, ClapTrap const & i)
-// {
-// 	o << "Value = " << i.getValue();
-// 	return o;
-// }
+    return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -49,17 +48,18 @@ void ClapTrap::attack(const string &target) {
 	cout << this->_name << " attacked " << target << " causing " << this->_attackDamage << " points of damage." << endl;
 }
 
-void ClapTrap::beRepaired(int amount) {
-	if (_hitPoints <= 0){
+void ClapTrap::beRepaired(unsigned int amount) {
+	if (_hitPoints == 0){
 		cout << this->_name << " is already dead." << endl;
 		return;
 	}
 	this->_energyPoints -= 1;
+	this->_hitPoints += amount;
 	cout << this->_name << " repairs himself " << amount << " Hitpoints." << endl;
 }
 
-void ClapTrap::takeDamage(int amount) {
-	if (_hitPoints <= 0) {
+void ClapTrap::takeDamage(unsigned int amount) {
+	if (_hitPoints == 0) {
 		cout << this->_name << " is already dead." << endl;
 		return;
 	}
@@ -76,6 +76,10 @@ void ClapTrap::takeDamage(int amount) {
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+string ClapTrap::getName() const {
+	return (this->_name);
+}
 
 
 /* ************************************************************************** */

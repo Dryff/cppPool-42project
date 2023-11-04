@@ -22,7 +22,9 @@ class AAnimal
 		virtual ~AAnimal();
 
 		string getType() const;
-		virtual void    makeSound( void ) const = 0;
+		virtual void    makeSound() const = 0;
+		AAnimal & operator = ( const AAnimal & rhs );
+
 };
 
 

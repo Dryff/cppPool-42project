@@ -1,20 +1,21 @@
 #include "ScavTrap.hpp"
-#include "FlagTrap.hpp"
+#include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
 int main() {
-	ClapTrap Jinx("Jinx");
-	ScavTrap Yone("Yone");
-	ClapTrap Yasuo("Yasuo");
-	FlagTrap Heyo("Heyo");
-	DiamondTrap dia("dia");
+	ClapTrap Clap1("Clap1");
+	ClapTrap Clap2("Clap2");
+	ScavTrap Scav("Scav");
+	FragTrap Frag("Frag");
+	DiamondTrap Dia("dia");
 
-	Jinx.attack("Yasuo");
-	Yone.attack("jinx");
-	Heyo.attack("Yone");
-	Yasuo.takeDamage(25);
-	Yasuo.beRepaired(10);
-	Yone.guardGate();
-	Heyo.highFivesGuys();
-	dia.whoAmI();
+	Clap1.attack("Clap");
+	Scav.attack("Clap1");
+	Frag.attack("Scav");
+	Clap2.takeDamage(25);
+	Clap2.beRepaired(10);
+	Scav.guardGate();
+	Frag.highFivesGuys();
+	Dia.whoAmI();
+	Dia.attack("Scav");
 }

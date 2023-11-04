@@ -1,13 +1,13 @@
 #include "ScavTrap.hpp"
 
 int main() {
-	ClapTrap Jinx("Jinx");
-	ScavTrap Yone("Yone");
-	ClapTrap Yasuo("Yasuo");
+	ClapTrap Clap1("Clap1");
+	ScavTrap Scav("Scav");
+	ClapTrap Clap2("Clap2");
 
-	Jinx.attack("Yasuo");
-	Yone.attack("jinx");
-	Yasuo.takeDamage(25);
-	Yasuo.beRepaired(10);
-	Yone.guardGate();
+	Clap1.attack("Clap2");
+	Scav.attack("Clap1");
+	Clap2.takeDamage(25);
+	Clap2.beRepaired(10);
+	Scav.guardGate();
 }

@@ -1,4 +1,4 @@
-NAME		= FlagTrap
+NAME		= FragTrap
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,9 +6,9 @@ RM			= rm -rf
 
 OBJDIR =	 .objFiles
 
-FILES		= main ClapTrap ScavTrap FlagTrap
+FILES		= main ClapTrap ScavTrap FragTrap
 
-HEADER		= ClapTrap.hpp ScavTrap.hpp FlagTrap.hpp
+HEADER		= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 

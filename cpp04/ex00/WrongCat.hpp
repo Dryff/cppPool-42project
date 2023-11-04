@@ -10,6 +10,7 @@
 
 class WrongCat : public WrongAnimal
 {
+	private:
 
 	public:
 
@@ -18,11 +19,7 @@ class WrongCat : public WrongAnimal
 		~WrongCat();
 
 		void makeSound() const;
-
-	private:
-
+		WrongCat &		operator=(WrongCat const & rhs);
 };
-
-std::ostream &			operator<<(std::ostream & o, WrongCat const & i);
 
 #endif /* ************************************************************* WrongCat_H */

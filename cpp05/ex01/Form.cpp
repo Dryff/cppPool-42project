@@ -1,28 +1,28 @@
 #include "Form.hpp"
 
-static void	checkGrade(int grade, int min = MIN_GRADE, int max = MAX_GRADE) {
-	if (grade > min)
+void	checkGrade(int grade) {
+	if (grade > 150)
 		throw Form::GradeTooLowException();
-	else if (grade < max)
+	else if (grade < 1)
 		throw Form::GradeTooHighException();
 }
 
-Form::Form(): signGrade(0), execGrade(0) {}
+Form::Form(): _signGrade(0), _execGrade(0) {}
 
 Form::Form(const std::string& name, int signGrade, int execGrade)
-	: name(name)
-	, isSigned(false)
-	, signGrade(signGrade)
-	, execGrade(execGrade) {
+	: _name(name)
+	, _isSigned(false)
+	, _signGrade(signGrade)
+	, _execGrade(execGrade) {
 	checkGrade(signGrade);
 	checkGrade(execGrade);
 }
 
 Form::Form(const Form& other)
-	: name(other.name)
-	, isSigned(false)
-	, signGrade(other.signGrade)
-	, execGrade(other.execGrade) {}
+	: _name(other._name)
+	, _isSigned(false)
+	, _signGrade(other._signGrade)
+	, _execGrade(other._execGrade) {}
 
 Form::~Form() {}
 
@@ -32,35 +32,35 @@ Form&	Form::operator =(const Form& other) {
 }
 
 const std::string&	Form::getName() const {
-	return name;
+	return _name;
 }
 
 bool	Form::getSigned() const {
-	return isSigned;
+	return _isSigned;
 }
 
 int	Form::getSignGrade() const {
-	return signGrade;
+	return _signGrade;
 }
 
 int	Form::getExecGrade() const {
-	return execGrade;
+	return _execGrade;
 }
 
-void	Form::sign(const Bureaucrat& bureaucrat) {
-	if (isSigned)
+void	Form::beSigned(const Bureaucrat& bureaucrat) {
+	if (_isSigned)
 		throw AlreadySignedException();
-	if (signGrade < bureaucrat.getGrade())
+	if (_signGrade < bureaucrat.getGrade())
 		throw GradeTooLowException();
-	isSigned = true;
+	_isSigned = true;
 }
 
 const char*	Form::GradeTooLowException::what() const throw() {
-	return "his grade is too low";
+	return "one form parameter specified is too low";
 }
 
 const char*	Form::GradeTooHighException::what() const throw() {
-	return "his grade is too high";
+	return "one of form parameter specified is too high";
 }
 
 const char*	Form::AlreadySignedException::what() const throw() {
@@ -68,10 +68,10 @@ const char*	Form::AlreadySignedException::what() const throw() {
 }
 
 std::ostream&	operator<<(std::ostream &o, const Form& form) {
-	o << std::boolalpha << "-- Form informations : " << form.getName() << " --" << std::endl
+	o << std::endl << std::boolalpha << "** Form informations : " << form.getName() << " **" << std::endl
 	<< "Signed : " << form.getSigned() << std::endl
 	  << "Grade needed to sign : " << form.getSignGrade() << std::endl
 	  << "Grade needed to execute : " << form.getExecGrade() << std::boolalpha << std::endl
-	  << "-" << std::endl;
+	  << std::endl ;
 	return o;
 }

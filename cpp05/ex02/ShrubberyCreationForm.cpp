@@ -20,7 +20,7 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 void	ShrubberyCreationForm::executeConcrete() const {
 	std::fstream	fs;
 
-	fs.open(target + "_shrubbery", std::fstream::out | std::fstream::trunc);
+	fs.open((target + "_shrubbery").c_str(), std::fstream::out | std::fstream::trunc);
 
 	if (!fs.good())
 		std::cerr << "Error while opening Shrubbery target file" << std::endl;
@@ -40,4 +40,12 @@ void	ShrubberyCreationForm::executeConcrete() const {
     "                            , -=-~{ .-^- _\n"
     "                                  `}\n ";
 	fs.close();
+}
+
+void	ShrubberyCreationForm::execute(const Bureaucrat& executor) {
+	if (!isSigned)
+		throw ExecUnsignedException();
+	if (execGrade < executor.getGrade())
+		throw GradeTooLowException();
+	executeConcrete();
 }

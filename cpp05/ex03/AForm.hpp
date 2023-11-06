@@ -1,5 +1,5 @@
-#ifndef Form_HPP
-# define Form_HPP
+#ifndef AForm_HPP
+# define AForm_HPP
 
 # include "Bureaucrat.hpp"
 # include <iomanip>
@@ -8,7 +8,7 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 	protected :
 		const std::string	name;
 		const std::string	target;
@@ -16,14 +16,13 @@ class Form {
 		const int			signGrade;
 		const int			execGrade;
 
-		virtual void	executeConcrete() const = 0;
 	public:
-		Form();
-		Form(const std::string& name, const std::string &target, int gradeSign, int gradeExec);
-		Form(const Form& other);
-		virtual ~Form();
+		AForm();
+		AForm(const std::string& name, const std::string &target, int gradeSign, int gradeExec);
+		AForm(const AForm& other);
+		virtual ~AForm();
 
-		Form&	operator =(const Form& other);
+		AForm&	operator =(const AForm& other);
 
 		const std::string&	getName() const;
 		bool				getSigned() const;
@@ -31,7 +30,7 @@ class Form {
 		int					getExecGrade() const;
 
 		void	sign(const Bureaucrat& bureaucrat);
-		void	execute(const Bureaucrat& executor);
+		virtual void	execute(const Bureaucrat& executor) = 0;
 
 
 		class GradeTooLowException: public std::exception {
@@ -51,6 +50,6 @@ class Form {
 		};
 };
 
-std::ostream&	operator<<(std::ostream &o, const Form& Form);
+std::ostream&	operator<<(std::ostream &o, const AForm& AForm);
 
 #endif

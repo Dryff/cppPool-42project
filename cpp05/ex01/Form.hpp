@@ -10,10 +10,10 @@ class Bureaucrat;
 
 class Form {
 	private:
-		const std::string	name;
-		bool				isSigned;
-		const int			signGrade;
-		const int			execGrade;
+		const std::string	_name;
+		bool				_isSigned;
+		const int			_signGrade;
+		const int			_execGrade;
 
 		Form();
 	public:
@@ -28,7 +28,7 @@ class Form {
 		int					getSignGrade() const;
 		int					getExecGrade() const;
 
-		void	sign(const Bureaucrat& bureaucrat);
+		void	beSigned(const Bureaucrat& bureaucrat);
 
 		class GradeTooLowException: public std::exception {
 			virtual const char*	what() const throw();

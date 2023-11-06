@@ -33,14 +33,14 @@ int	Bureaucrat::getGrade() const {
 
 void	Bureaucrat::incrementGrade(int nbr) {
 	std::cout << "Incrementing " << name << "'s grade by " << nbr << ": ";
-	if (grade - nbr < 150)
+	if (grade - nbr < 1)
 		throw GradeTooHighException();
 	grade -= nbr;
 }
 
 void	Bureaucrat::decrementGrade(int nbr) {
 	std::cout << "Decrementing " << name << "'s grade by " << nbr << ": ";
-	if (grade + nbr > 1)
+	if (grade + nbr > 150)
 		throw GradeTooLowException();
 	grade += nbr;
 }

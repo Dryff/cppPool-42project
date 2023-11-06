@@ -5,6 +5,7 @@
 # include <iostream>
 # include <stdexcept>
 # include <string>
+# include <cstdlib>
 
 # define MIN_GRADE	150
 # define MAX_GRADE	1

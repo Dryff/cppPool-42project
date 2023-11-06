@@ -73,7 +73,7 @@ const char*	AForm::ExecUnsignedException::what() const throw() {
 }
 
 std::ostream&	operator<<(std::ostream &o, const AForm& form) {
-	o << std::boolalpha <<"-- Form informations : " << form.getName() << " --" << std::endl
+	o << std::boolalpha <<"-- AForm informations : " << form.getName() << " --" << std::endl
 	<< "Signed : " << form.getSigned() << std::endl
 	  << "Grade needed to sign : " << form.getSignGrade() << std::endl
 	  << "Grade needed to execute : " << form.getExecGrade()  << std::endl

@@ -1,15 +1,13 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-# include "Form.hpp"
+# include "AForm.hpp"
 # include <iostream>
 # include <stdexcept>
 # include <string>
+# include <cstdlib>
 
-# define MIN_GRADE	150
-# define MAX_GRADE	1
-
-class Form;
+class AForm;
 
 class Bureaucrat {
 	private:
@@ -30,8 +28,8 @@ class Bureaucrat {
 		void	incrementGrade(int change = 1);
 		void	decrementGrade(int change = 1);
 
-		void	signForm(Form& form) const;
-		void	executeForm(Form &form) const;
+		void	signForm(AForm& form) const;
+		void	executeForm(AForm &form) const;
 
 		class GradeTooLowException: public std::exception {
 			virtual const char*	what() const throw();

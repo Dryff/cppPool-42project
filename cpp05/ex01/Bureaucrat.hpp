@@ -6,9 +6,6 @@
 # include <stdexcept>
 # include <string>
 
-# define MIN_GRADE	150
-# define MAX_GRADE	1
-
 class Form;
 
 class Bureaucrat {

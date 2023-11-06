@@ -9,8 +9,8 @@ int	main() {
 	std::cout << Hervé << Alain;
 
 	ShrubberyCreationForm form1("home");
-	RobotomyRequestForm form2("Jordan");
-	PresidentialPardonForm form3("Kevin");
+	PresidentialPardonForm form2("Kevin");
+	RobotomyRequestForm form3("Jordan");
 	srand(time(NULL));
 
 	std::cout << "------------------------------------------------------" << std::endl;
@@ -21,7 +21,7 @@ int	main() {
 	std::cout << std::endl;
 
 	std::cout << "----------------------------------------------------" << std::endl;
-	std::cout << "Trying to sign and execute 2 - RobotomyRequestForm : " << std::endl;
+	std::cout << "Trying to sign and execute 2 - PresidentialPardonForm : " << std::endl;
 	std::cout << "----------------------------------------------------" << std::endl;
 
 	Hervé.signForm(form2);
@@ -29,24 +29,25 @@ int	main() {
 	std::cout << std::endl;
 
 	std::cout << "-------------------------------------------------------" << std::endl;
-	std::cout << "Trying to sign and execute 3 - PresidentialPardonForm : " << std::endl;
+	std::cout << "Trying to sign and execute 3 - RobotomyRequestForm : " << std::endl;
 	std::cout << "-------------------------------------------------------" << std::endl;
 	Hervé.signForm(form3);
 	std::cout << "Attempt 1 : ";
-	Hervé.executeForm(form2);
+	Hervé.executeForm(form3);
 	std::cout << "Attempt 2 : ";
-	Hervé.executeForm(form2);
+	Hervé.executeForm(form3);
 	std::cout << "Attempt 3 : ";
-	Hervé.executeForm(form2);
+	Hervé.executeForm(form3);
 	std::cout << "Attempt 4 : ";
-	Hervé.executeForm(form2);
+	Hervé.executeForm(form3);
 	std::cout << "Attempt 5 : ";
-	Hervé.executeForm(form2);
-	PresidentialPardonForm form4("Marc");
+	Hervé.executeForm(form3);
+	std::cout << std::endl;
 	
 	std::cout << "---------------------------------" << std::endl;
 	std::cout << "Trying to execute unsigned form : " << std::endl;
 	std::cout << "---------------------------------" << std::endl;
+	PresidentialPardonForm form4("Marc");
 	std::cout << form4;
 	Hervé.executeForm(form4);
 	std::cout << std::endl;
@@ -55,6 +56,6 @@ int	main() {
 	std::cout << "Trying to execute form too high for Alain : " << std::endl;
 	std::cout << "-------------------------------------------" << std::endl;
 	std::cout << form4 << Alain;
-	Alain.executeForm(form3);
+	Alain.executeForm(form4);
 	std::cout << std::endl;
-	}
+}

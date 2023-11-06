@@ -28,11 +28,11 @@ Intern& Intern::operator=(const Intern& rhs) {
     return (*this);
 }
 
-Form*   Intern::makeForm(std::string name, std::string target) {
+AForm*   Intern::makeForm(std::string name, std::string target) {
 
     std::string formNames[] = {"shrubbery creation", "robotomy request",\
      "presidential pardon"};
-    Form*    forms[] = {new ShrubberyCreationForm(target), \
+    AForm*    forms[] = {new ShrubberyCreationForm(target), \
     new RobotomyRequestForm(target), new PresidentialPardonForm(target), };
     
     for (int i = 0; i < 3; i++)

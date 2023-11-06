@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: colas <colas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cgelin <cgelin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 16:50:23 by ael-khni          #+#    #+#             */
-/*   Updated: 2023/10/15 19:32:54 by colas            ###   ########.fr       */
+/*   Updated: 2023/11/06 16:40:24 by cgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Intern {
 
@@ -24,10 +24,10 @@ public:
 
     Intern& operator=(const Intern& rhs);
 
-    Form*   makeForm(std::string name, std::string target);
+    AForm*   makeForm(std::string name, std::string target);
 
     class FormNotFoundException: public std::exception {
-		virtual const char*	what() const throw();
+		  virtual const char*	what() const throw();
 	};
 };
 

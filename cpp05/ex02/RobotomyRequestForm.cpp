@@ -23,3 +23,11 @@ void	RobotomyRequestForm::executeConcrete() const {
 	else
 		std::cout << target << " had some problems and its robotomy failed!" << std::endl;
 }
+
+void	RobotomyRequestForm::execute(const Bureaucrat& executor) {
+	if (!isSigned)
+		throw ExecUnsignedException();
+	if (execGrade < executor.getGrade())
+		throw GradeTooLowException();
+	executeConcrete();
+}

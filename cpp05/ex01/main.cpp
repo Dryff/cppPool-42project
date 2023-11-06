@@ -27,11 +27,11 @@ int	main() {
 
 		std::cout << std::endl << B12 << F13;
 
-		std::cout << "---- \nTesting if hervé can sign twice the same form : ";
+		std::cout << "---- \nTesting if hervé can sign twice the same form : " << std::endl;
 		Hervé.signForm(B12);
 		std::cout << B12;
 		Hervé.signForm(B12);
 
-		std::cout << "---- \nTesting if hervé of grade 42 can sign form of required grade 1 : ";
+		std::cout << "---- \n\nTesting if hervé of grade 42 can sign form of required grade 1 : " << std::endl;
 		Hervé.signForm(F13);
 }

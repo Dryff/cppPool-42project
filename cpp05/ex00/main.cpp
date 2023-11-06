@@ -28,33 +28,26 @@ int	main() {
 	catch (std::exception& e) {
 		std::cout << "Error: " << e.what() << std::endl;
 	}
-
+	std::cout << std::endl;
 	std::cout << "--- Incrementing ---" << std::endl;
 
 	try {
 		Bureaucrat	Alain("Alain", 12);
 		std::cout << Alain;
-		Alain.incrementGrade(10);
-		std::cout << Alain;
-		Alain.incrementGrade();
-		std::cout << Alain;
-		Alain.incrementGrade();
+		Alain.incrementGrade(11);
 		std::cout << Alain;
 	}
 	catch (std::exception& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cout << "Error: " << e.what() << std::endl << std::endl;
 	}
-
+	
+	std::cout << std::endl;
 	std::cout << "--- Decrementing ---" << std::endl;
 
 	try {
 		Bureaucrat	Claude("Claude", 139);
 		std::cout << Claude;
-		Claude.decrementGrade(10);
-		std::cout << Claude;
-		Claude.decrementGrade();
-		std::cout << Claude;
-		Claude.decrementGrade(); // too low!
+		Claude.decrementGrade(12);
 		std::cout << Claude;
 	}
 	catch (std::exception& e) {

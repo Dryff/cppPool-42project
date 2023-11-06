@@ -1,16 +1,18 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class ShrubberyCreationForm: public Form {
+class ShrubberyCreationForm: public AForm {
 	private:
 		ShrubberyCreationForm();
-		virtual void	executeConcrete() const;
 	public:
 		ShrubberyCreationForm(const std::string& target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& other);
 		virtual ~ShrubberyCreationForm();
+
+		void execute(const Bureaucrat& executor);
+		void executeConcrete() const;
 
 		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& other);
 };

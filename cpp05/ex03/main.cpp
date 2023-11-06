@@ -5,9 +5,9 @@
 #include "Intern.hpp"
 
 int	main() {
-	Bureaucrat	Hervé("Hervé", 1);
+	Bureaucrat Hervé("Hervé", 1);
 	Intern titouan;
-	Form *form;
+	AForm *form;
 	srand(time(NULL));
 
 	std::cout << "------------------------" << std::endl;
@@ -18,6 +18,7 @@ int	main() {
 	Hervé.executeForm(*form);
 	delete form;
 
+	std::cout << std::endl;
 	std::cout << "--------------------------" << std::endl;
 	std::cout << "Shrubbbery Creation form : " << std::endl;
 	std::cout << "--------------------------" << std::endl;
@@ -26,6 +27,7 @@ int	main() {
 	Hervé.executeForm(*form);
 	delete form;
 
+	std::cout << std::endl;
 	std::cout << "------------------------" << std::endl;
 	std::cout << "Presidential Pardon form : " << std::endl;
 	std::cout << "------------------------" << std::endl;
@@ -34,6 +36,7 @@ int	main() {
 	Hervé.executeForm(*form);
 	delete form;
 
+	std::cout << std::endl;
 	std::cout << "------------------------" << std::endl;
 	std::cout << "Trying to create a non existing form : " << std::endl;
 	std::cout << "------------------------" << std::endl;

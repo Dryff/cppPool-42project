@@ -10,7 +10,7 @@ class RobotomyRequestForm: public AForm {
 	public:
 		RobotomyRequestForm(const std::string& target);
 		RobotomyRequestForm(const RobotomyRequestForm& other);
-		virtual ~RobotomyRequestForm();
+		~RobotomyRequestForm();
 
 		void execute(const Bureaucrat& executor);
 

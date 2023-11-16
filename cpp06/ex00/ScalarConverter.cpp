@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: colas <colas@student.42.fr>                +#+  +:+       +#+        */
+/*   By: cgelin <cgelin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:06:32 by colas             #+#    #+#             */
-/*   Updated: 2023/11/04 09:57:05 by colas            ###   ########.fr       */
+/*   Updated: 2023/11/16 14:25:03 by cgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void ScalarConverter::convert(const std::string &input) {
 	else if (input.length() == 1 && std::isprint(input[0])) {
 		printChar(input);
 	}
+	else std::cout << "Conversion impossible" << std::endl;
 }
 
 void ScalarConverter::printChar(const std::string &input) {
@@ -89,7 +90,6 @@ void ScalarConverter::printInt(const std::string &input) {
 }
 
 void ScalarConverter::printFloat(const std::string &input) {
-	std::cout << "salut" << std::endl;
 	float value = atof(input.c_str());
 	char c = static_cast<char>(value);
 	if (isprint(c))

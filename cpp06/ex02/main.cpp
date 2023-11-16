@@ -10,8 +10,11 @@ Base * generate() {
 		std::cout << "Generated a B class" << std::endl;
 		return new B();
 	}
-	std::cout << "Generated a C class" << std::endl;
-	return new C();
+	else if (random == 2){
+		std::cout << "Generated a C class" << std::endl;
+		return new C();
+	}
+	else return NULL;
 }
 
 void identify(Base * p)

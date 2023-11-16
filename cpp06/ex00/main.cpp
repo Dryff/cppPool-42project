@@ -16,6 +16,7 @@ int main(){
 	object.convert("42");
 	std::cout << std::endl;
 
+
 	std::cout << "------" << std::endl;
 	std::cout << "CONVERTING 14.4f : " << std::endl;
 	std::cout << "------" << std::endl;
@@ -59,4 +60,9 @@ int main(){
 	object.convert("-inff");
 	std::cout << std::endl;
 
+	std::cout << "------" << std::endl;
+	std::cout << "CONVERTING \"ewqewq\" : "  << std::endl;
+	std::cout << "------" << std::endl;
+	object.convert("ewqeqw");
+	std::cout << std::endl;
 }

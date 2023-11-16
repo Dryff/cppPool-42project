@@ -13,28 +13,43 @@ int	main() {
 	std::cout << "------------------------" << std::endl;
 	std::cout << "Robotomy request form : " << std::endl;
 	std::cout << "------------------------" << std::endl;
-	form = titouan.makeForm("robotomy request", "Jack");
-	Hervé.signForm(*form);
-	Hervé.executeForm(*form);
-	delete form;
+	try {
+		form = titouan.makeForm("robotomy request", "Jack");
+		Hervé.signForm(*form);
+		Hervé.executeForm(*form);
+		delete form;
+	}
+	catch (std::exception &e) {
+		std::cout << "Error : " << e.what() << std::endl;
+	}
 
 	std::cout << std::endl;
 	std::cout << "--------------------------" << std::endl;
 	std::cout << "Shrubbbery Creation form : " << std::endl;
 	std::cout << "--------------------------" << std::endl;
-	form = titouan.makeForm("shrubbery creation", "Home");
-	Hervé.signForm(*form);
-	Hervé.executeForm(*form);
-	delete form;
+	try {
+		form = titouan.makeForm("shrubbery creation", "Home");
+		Hervé.signForm(*form);
+		Hervé.executeForm(*form);
+		delete form;
+	}
+	catch (std::exception &e) {
+		std::cout << "Error : " << e.what() << std::endl;
+	}
 
 	std::cout << std::endl;
 	std::cout << "------------------------" << std::endl;
 	std::cout << "Presidential Pardon form : " << std::endl;
 	std::cout << "------------------------" << std::endl;
-	form = titouan.makeForm("presidential pardon", "John");
-	Hervé.signForm(*form);
-	Hervé.executeForm(*form);
-	delete form;
+	try {
+		form = titouan.makeForm("presidential pardon", "John");
+		Hervé.signForm(*form);
+		Hervé.executeForm(*form);
+		delete form;
+	}
+	catch (std::exception &e) {
+		std::cout << "Error : " << e.what() << std::endl;
+	}
 
 	std::cout << std::endl;
 	std::cout << "------------------------" << std::endl;

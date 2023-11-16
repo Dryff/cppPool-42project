@@ -34,7 +34,6 @@ AForm*   Intern::makeForm(std::string name, std::string target) {
      "presidential pardon"};
     AForm*    forms[] = {new ShrubberyCreationForm(target), \
     new RobotomyRequestForm(target), new PresidentialPardonForm(target), };
-    
     for (int i = 0; i < 3; i++)
     {
         if (name == formNames[i]) {

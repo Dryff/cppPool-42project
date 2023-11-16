@@ -72,8 +72,20 @@ int main()
     for (MutantStack<int>::iterator it = mutantStack.end() - 1; it != mutantStack.begin(); --it) {
         std::cout << *it << " ";
     }
-
     std::cout << std::endl;
+
+	std::cout << "Const Iterate : ";
+    for (MutantStack<int>::const_iterator it = mutantStack.begin(); it != mutantStack.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
+    std::cout << "Const Reverse iterate : ";
+    for (MutantStack<int>::const_iterator it = mutantStack.end() - 1; it != mutantStack.begin(); --it) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+
     return 0;
 }
 

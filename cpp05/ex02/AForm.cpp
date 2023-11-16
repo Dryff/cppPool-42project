@@ -48,7 +48,7 @@ int	AForm::getExecGrade() const {
 	return execGrade;
 }
 
-void	AForm::sign(const Bureaucrat& bureaucrat) {
+void	AForm::beSigned(const Bureaucrat& bureaucrat) {
 	if (isSigned)
 		throw AlreadySignedException();
 	if (signGrade < bureaucrat.getGrade())

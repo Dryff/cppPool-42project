@@ -6,7 +6,7 @@ RM			= rm -rf
 
 OBJDIR =	 .objFiles
 
-FILES		= main MutantStack
+FILES		= main
 
 HEADER		= MutantStack.hpp
 SRC			= $(FILES:=.cpp)

@@ -20,7 +20,7 @@ class AForm {
 		AForm();
 		AForm(const std::string& name, const std::string &target, int gradeSign, int gradeExec);
 		AForm(const AForm& other);
-		~AForm();
+		virtual ~AForm();
 
 		AForm&	operator =(const AForm& other);
 
@@ -29,7 +29,7 @@ class AForm {
 		int					getSignGrade() const;
 		int					getExecGrade() const;
 
-		void	sign(const Bureaucrat& bureaucrat);
+		void	beSigned(const Bureaucrat& bureaucrat);
 		virtual void execute(const Bureaucrat& executor) = 0;
 
 

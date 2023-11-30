@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
 		if (!btc.isValidRate(rate))
 			continue;
 
-		float res = std::stof(rate) * btc.getRate(date);
+		float res = std::atof(rate.c_str()) * btc.getRate(date);
 		std::cout << date << " => " << rate << " = " << res << std::endl;
 	}
 }

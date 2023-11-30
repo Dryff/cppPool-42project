@@ -30,7 +30,7 @@ bool BitcoinExchange::isValidRate(std::string rate)
 {
 	if (rate.empty() || rate.find_first_not_of("0123456789.-") != std::string::npos || rate.at(0) == '.' || rate.find('.', rate.length() - 1) != std::string::npos)
 		return ft_error("Error: invalid rate format");
-	float ratef = std::stof(rate);
+	float ratef = std::atof(rate.c_str());
 	if (ratef < 0)
 		return ft_error("Error: not a positive number.");
 	if (ratef > 1000)
@@ -118,7 +118,7 @@ bool BitcoinExchange::initializeMap(std::ifstream& dbFile)
 	{
 		commaPos = line.find(',');
 		std::string rate = line.substr(commaPos + 1);
-		this->dataBase[line.substr(0, commaPos)] = std::stof(rate);
+		this->dataBase[line.substr(0, commaPos)] = std::atof(rate.c_str());
 	}
 	return true;
 }

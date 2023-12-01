@@ -41,7 +41,8 @@ int main(int argc, char **argv)
 		deq = deqSort(arr, argc - 1);
 		timerDeq = std::clock() - timerDeq;
 
-		printVector(vec, "After : ");
+		printVector(vec, "| Vector | After : ");
+		printDeque(deq, "| Deque  | After : ");
 
 		std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector : " << ((((long double)timerVec) / CLOCKS_PER_SEC) * 1000) << " ms" << std::endl;
 		std::cout << "Time to process a range of " << argc - 1 << " elements with std::deque : " <<

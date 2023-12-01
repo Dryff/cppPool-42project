@@ -36,6 +36,15 @@ void printVector(const std::vector<T>& vec, std::string text) {
     std::cout << std::endl;
 }
 
+template <typename T>
+void printDeque(const std::deque<T>& myDeque, std::string text) {
+    std::cout << text;
+    for (typename std::deque<T>::const_iterator it = myDeque.begin(); it != myDeque.end(); ++it) {
+        std::cout << *it << " ";
+    }
+    std::cout << std::endl;
+}
+
 void	checkErrors(int ac, char **av);
 std::vector<int> vecSort(unsigned int *arr, int argc);
 std::deque<int> deqSort(unsigned int *arr, int argc);

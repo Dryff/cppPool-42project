@@ -36,23 +36,24 @@ bool	allNbrIsPushed(std::pair<int, int> pairTab[], int nbOfPair, int i) {
 	return true;
 }
 
-void pushSecondToVector(std::vector<int> *vec, std::pair<int, int> pairTab[], int nbOfPair) {
-    while (!allNbrIsPushed(pairTab, nbOfPair, 0)) {
-        int tmp = pairTab[0].second;
-
-        for (int i = 1; i < nbOfPair; ++i) {
-            if (pairTab[i].second > tmp) {
-                tmp = pairTab[i].second;
-            }
+void pushSecondToVector(std::vector<int> *vec, std::pair<int, int> pairTab[], int nbOfPair) 
+{
+    if (allNbrIsPushed(pairTab, nbOfPair, 0))
+        return;
+    int tmp = pairTab[0].second;
+    for (int i = 1; i < nbOfPair; ++i) {
+        if (pairTab[i].second > tmp) {
+            tmp = pairTab[i].second;
         }
-        for (int i = 0; i < nbOfPair; ++i) {
-            if (tmp == pairTab[i].second) {
-                pairTab[i].second = -1;
-                break;
-            }
-        }
-        vec->insert(vec->begin(), tmp);
     }
+    for (int i = 0; i < nbOfPair; ++i) {
+        if (tmp == pairTab[i].second) {
+            pairTab[i].second = -1;
+            break;
+        }
+    }
+    vec->insert(vec->begin(), tmp);
+    pushSecondToVector(vec, pairTab, nbOfPair);
 }
 
 void pushMinNbrToVector(std::vector<int> *vec, std::pair<int, int> pairTab[], int nbOfPair, int *lastNbr) {
@@ -95,23 +96,24 @@ std::vector<int> vecSort(unsigned int *arr, int len)
 	return vec;
 }
 
-void pushSecondToDeque(std::deque<int> *deq, std::pair<int, int> pairTab[], int nbOfPair) {
-    while (!allNbrIsPushed(pairTab, nbOfPair, 0)) {
-        int tmp = pairTab[0].second;
-
-        for (int i = 1; i < nbOfPair; ++i) {
-            if (pairTab[i].second > tmp) {
-                tmp = pairTab[i].second;
-            }
+void pushSecondToDeque(std::deque<int> *deq, std::pair<int, int> pairTab[], int nbOfPair) 
+{
+    if (allNbrIsPushed(pairTab, nbOfPair, 0))
+        return;
+    int tmp = pairTab[0].second;
+    for (int i = 1; i < nbOfPair; ++i) {
+        if (pairTab[i].second > tmp) {
+            tmp = pairTab[i].second;
         }
-        for (int i = 0; i < nbOfPair; ++i) {
-            if (tmp == pairTab[i].second) {
-                pairTab[i].second = -1;
-                break;
-            }
-        }
-        deq->insert(deq->begin(), tmp);
     }
+    for (int i = 0; i < nbOfPair; ++i) {
+        if (tmp == pairTab[i].second) {
+            pairTab[i].second = -1;
+            break;
+        }
+    }
+    deq->insert(deq->begin(), tmp);
+    pushSecondToDeque(deq, pairTab, nbOfPair);
 }
 
 void pushMinNbrToDeque(std::deque<int> *deq, std::pair<int, int> pairTab[], int nbOfPair, int *lastNbr) {

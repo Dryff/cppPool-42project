@@ -5,6 +5,8 @@
 #include <fstream>
 #include <sstream>
 #include <map>
+#include <cstdlib>
+
 
 inline bool ft_error(std::string str) {
 		std::cerr << str << std::endl;

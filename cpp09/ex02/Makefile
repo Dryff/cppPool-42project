@@ -1,4 +1,4 @@
-NAME		= PMergeMe
+NAME		= PmergeMe
 	
 CC			= c++
 FLAGS		= -Wall -Wextra -Werror -std=c++98
@@ -6,9 +6,9 @@ RM			= rm -rf
 
 OBJDIR =	 .objFiles
 
-FILES		= main PMergeMe
+FILES		= main PmergeMe
 
-HEADER		= PMergeMe.hpp
+HEADER		= PmergeMe.hpp
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 

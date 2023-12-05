@@ -16,7 +16,7 @@ RPN::~RPN(void) {};
 void RPN::isValidExpression(const std::string & str) {
     int counter = 0;
 
-    if (str.find_first_not_of("0123456789+-/*") != std::string::npos)
+    if (str.find_first_not_of("0123456789+-/* ") != std::string::npos)
         throw CalculationNotPossibleException();
 
     for (size_t i = 0; i < str.size(); i++) {

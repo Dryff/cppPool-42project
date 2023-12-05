@@ -18,8 +18,7 @@ public:
 	};
 
 	~Array() {
-		if (this->_size > 0)
-			delete[] _myArray;
+		delete []_myArray;
 	}
 
 	Array(Array const & src): _size(src.size()) {
@@ -30,9 +29,10 @@ public:
 	};
 
 	Array & operator=(Array const & src) {
-		if (this != &src) {
+		if (this != &src) 
+		{
 			this->_size = src.size();
-			delete _myArray;
+			delete []_myArray;
 			this->_myArray = new T[_size];
 			for (unsigned int i = 0 ; i < this->_size; i++) {
 				this->_myArray[i] = src._myArray[i];

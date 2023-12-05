@@ -81,17 +81,17 @@ bool BitcoinExchange::checkDate(std::string date)
 	while (std::getline(ss, str, '-'))
 	{
 		if (i == 0) {
-			year = stoi(str);
+			year = atoi(str.c_str());
 			if (year < 2009)
 				return ft_error("Error: Do not have data for this date.");
 		}
 		if (i == 1) {
-			month = stoi(str);
+			month = atoi(str.c_str());
 			if (month < 1 || month > 12)
 				return ft_error("Error: Month doesn't exist.");
 		}
 		if (i == 2) {
-			day = stoi(str);
+			day = atoi(str.c_str());
 			if ( (day < 1 || day > 31)
 			||   (day == 31 && (month == 2 || month == 4 || month == 6 || month == 9 || month == 11))
 			||	 (month == 2 && day > 29)

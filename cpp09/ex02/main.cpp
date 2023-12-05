@@ -1,4 +1,4 @@
-#include "PMergeMe.hpp"
+#include "PmergeMe.hpp"
 
 bool parse_args(unsigned int arr[], int argc, char **argv) {
 	if (argc < 3)
@@ -34,17 +34,17 @@ int main(int argc, char **argv)
 		printArray(arr, argc - 1, "Before : ");
 
 		timerVec = std::clock();
-		vec = vecSort(arr, argc - 1);
+		vecSort(vec, arr, argc - 1);
 		timerVec = std::clock() - timerVec;
 
 		timerDeq = std::clock();
-		deq = deqSort(arr, argc - 1);
+		vecSort(deq, arr, argc - 1);
 		timerDeq = std::clock() - timerDeq;
 
-		printVector(vec, "| Vector | After : ");
-		printDeque(deq, "| Deque  | After : ");
+		printVector(vec, "After : ");
 
-		std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector : " << ((((long double)timerVec) / CLOCKS_PER_SEC) * 1000) << " ms" << std::endl;
+		std::cout << "Time to process a range of " << argc - 1 << " elements with std::vector : " << 
+		((((long double)timerVec) / CLOCKS_PER_SEC) * 1000) << " ms" << std::endl;
 		std::cout << "Time to process a range of " << argc - 1 << " elements with std::deque : " <<
 		((((long double)timerDeq)/CLOCKS_PER_SEC) * 1000) << " ms" << std::endl;
 	}
@@ -52,6 +52,6 @@ int main(int argc, char **argv)
 		std::cout << e.what() << std::endl;
 		return 1;
 	}
-
+	
 	return 0;
 }

@@ -1,14 +1,14 @@
 NAME		= myArray
 	
 CC			= c++
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+FLAGS		= -Wall -Wextra -Werror -std=c++98 -g3 
 RM			= rm -rf
 
 OBJDIR =	 .objFiles
 
 FILES		= main 
 
-HEADER		= array.hpp
+HEADER		= Array.hpp
 SRC			= $(FILES:=.cpp)
 OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
 

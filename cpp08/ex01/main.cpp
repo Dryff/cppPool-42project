@@ -58,7 +58,7 @@ int main()
 		std::cout << "--------------" << std::endl;
 		std::cout << "Testing 10000 numbers in container :" << std::endl << std::endl;
 		Span sp(10000);
-		sp.addMultipleNumbers(5);
+		sp.fillWithANumber(5);
 		sp.displayNumbers();
 		std::cout << std::endl;
 		std::cout << "--------------" << std::endl;

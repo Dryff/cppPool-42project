@@ -5,14 +5,20 @@
 #include <vector>
 
 class Span {
+private:
+	unsigned int _size;
+	std::vector<int> _container;
+
+	Span();
 public:
-	~Span();
 	Span(unsigned int N);
 	Span(Span const & src);
+	~Span();
+
 	Span & operator=(Span const & src);
 
 	void addNumber(int number);
-	void addMultipleNumbers(int number);
+	void fillWithANumber(int number);
 	void displayNumbers();
 	int shortestSpan();
 	int longestSpan();
@@ -25,11 +31,6 @@ public:
 		}
 	}
 
-private:
-	unsigned int _size;
-	std::vector<int> _container;
-
-	Span();
 };
 
 #endif

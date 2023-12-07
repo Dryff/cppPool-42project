@@ -12,8 +12,8 @@
 
 void	createPairs(std::pair<int, int> *pairTab, unsigned int *arr, int len, int *lastNbr);
 void 	printPairs(std::pair<int, int> pair[], int pairNbr);
-void	sortPairsFromSecond(std::pair<int, int> *pairTab, int pairNb);
-bool	allNbrIsPushed(std::pair<int, int> pairTab[], int nbOfPair, int i);
+void    sortPairsBySecondRecursively(std::pair<int, int> *pairTab, int start, int end);
+bool    allNbrIsPushed(std::pair<int, int> pairTab[], int nbOfPair, int i);
 int 	Jacobsthal(int n);
 
 
@@ -87,7 +87,7 @@ void vecSort(T &vec, unsigned int *arr, int len)
 
 	lastNbr = -1;
 	createPairs(pairTab, arr, len, &lastNbr);
-	sortPairsFromSecond(pairTab, len / 2);
+	sortPairsBySecondRecursively(pairTab, 0, len / 2);
 	addSecondsToVector(&vec, pairTab, len / 2, lastNbr);
 	insertFirstInVector(&vec, pairTab, len / 2);
 }
